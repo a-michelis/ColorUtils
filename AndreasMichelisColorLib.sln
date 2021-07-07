@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreasMichelisColorLib", "AndreasMichelisColorLib\AndreasMichelisColorLib.csproj", "{7B24EE69-45B5-44F7-8089-AA8FD48FC598}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B24EE69-45B5-44F7-8089-AA8FD48FC598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B24EE69-45B5-44F7-8089-AA8FD48FC598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B24EE69-45B5-44F7-8089-AA8FD48FC598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B24EE69-45B5-44F7-8089-AA8FD48FC598}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0487C8B0-7631-4A23-8C24-AF1835D845EC}
+	EndGlobalSection
+EndGlobal

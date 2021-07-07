@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<PackageId>AndreasMichelis.ColorUtils.Demo</PackageId>
+		<RootNamespace>AndreasMichelis.ColorUtils</RootNamespace>
+		<AssemblyName>ColorUtils.Demo</AssemblyName>
+		<Company>AndreasMichelis</Company>
+		<Product>ColorUtils Demo</Product>
+		<Authors>AndreasMichelis</Authors>
+		<Description>This Package exists only for demostration purposes. Do not download or use this package, unless you know what you're doing.</Description>
+		<Copyright>AndreasMichelis, 2021</Copyright>
+		<RepositoryUrl>https://github.com/thelegr/ColorUtils</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/thelegr/ColorUtils</PackageProjectUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageIconUrl />
+		<RepositoryType>Github Repository</RepositoryType>
+		<PackageTags>Color,RGB,RGBA,ARGB,HSL,YMCK,CMYK,CYMK</PackageTags>
+		<NeutralLanguage>en</NeutralLanguage>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>SignatureKey.pfx</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>
