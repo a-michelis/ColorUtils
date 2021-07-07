@@ -8,7 +8,9 @@
 		<Company>AndreasMichelis</Company>
 		<Product>ColorUtils Demo</Product>
 		<Authors>AndreasMichelis</Authors>
-		<Description>This Package exists only for demostration purposes. Do not download or use this package, unless you know what you're doing.</Description>
+		<Description>This Package exists only for demostration purposes. Do not download or use this package, unless you know what you're doing.
+
+Package Icon made by Freepik (https://www.freepik.com) from www.flaticon.com</Description>
 		<Copyright>AndreasMichelis, 2021</Copyright>
 		<RepositoryUrl>https://github.com/thelegr/ColorUtils</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/thelegr/ColorUtils</PackageProjectUrl>
