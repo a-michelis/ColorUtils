@@ -2,6 +2,10 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 
+// I'm a change,
+// notice me Senpai
+
+
 namespace AndreasMichelis.ColorUtils
 {
     public class Color
