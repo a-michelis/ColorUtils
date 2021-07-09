@@ -1,0 +1,28 @@
+name: "My first Github Action"
+
+on: [ "push" ]
+
+jobs: 
+  my_first_job: 
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Event Discovery'
+        run: echo "triggered by a ${{ github.event_name }} event."
+
+      - name: 'OS Discovery'
+        run: echo "Running inside ${{ runner.os }} system."
+
+      - name: 'Check out repository code'
+        uses: actions/checkout@v2
+
+      - name: 'Announce Cloning Completion'
+        run: echo "Repository ${{ github.repository }} has been cloned to VM."
+
+      - name: 'List of repository items and then remove them from VM'
+        run: |
+          ls ${{ github.workspace }} –la
+          rm –rf ./*
+
+      - name: 'Job Status Report'
+        run: echo "This job's status is ${{ job.status }}."
+# Saved at /.github/workflows/firstaction.yml
