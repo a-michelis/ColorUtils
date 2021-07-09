@@ -4,7 +4,7 @@ on :
   push:
     branches : [ "main" ]
 
-env:
+env :
   PROJECT_RELATIVE_PATH: 'AndreasMichelisColorLib\AndreasMichelisColorLib.csproj'
   NUGET_OUT_PATH: '${{ github.workspace }}\nuget_publish'
   API_TOKEN: ${{ secrets.NUKEY }}
@@ -28,7 +28,7 @@ jobs:
     - name: 'Creating Output Directory'
       run: mkdir ${{ env.NUGET_OUT_PATH }}
       
-    - name: "Restoring project's references"
+    - name: "Restoring project references"
       run: dotnet restore ${{ env.PROJECT_RELATIVE_PATH }}
       
     - name: 'Building project'
