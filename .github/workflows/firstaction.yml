@@ -37,7 +37,7 @@ jobs:
     # Put testing steps here
       
     - name: 'Packing project'
-      run: dotnet pack ${{ env.NUGET_OUT_PATH }} --no-restore --no-build --configuration Release -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --output ${{ env.PROJECT_RELATIVE_PATH }}
+      run: dotnet pack ${{ env.PROJECT_RELATIVE_PATH }} --no-restore --no-build --configuration Release -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --output ${{ env.NUGET_OUT_PATH }}
       
     - name: 'Pushing project to nuget.org'
       run: dotnet nuget push ${{ env.NUGET_OUT_PATH }}\*.nupkg -k ${{ env.API_TOKEN }} -s ${{ env.API_SOURCE }}
