@@ -7,7 +7,7 @@ on :
 env :
   PROJECT_RELATIVE_PATH: 'AndreasMichelisColorLib\AndreasMichelisColorLib.csproj'
   NUGET_OUT_PATH: '${{ github.workspace }}\nuget_publish'
-  API_TOKEN: ${{ secrets.NUKEY }}
+  API_TOKEN: ${{ secrets.NUGET_KEY }}
   API_SOURCE : 'https://api.nuget.org/v3/index.json'
   
 jobs:
