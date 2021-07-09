@@ -20,7 +20,7 @@ jobs:
 
       - name: 'List of repository items and then remove them from VM'
         run: |
-          ls ${{ github.workspace }} –la
+          ls –la ${{ github.workspace }}
           rm –rf ./*
 
       - name: 'Job Status Report'
