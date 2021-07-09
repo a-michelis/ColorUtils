@@ -18,10 +18,9 @@ jobs:
       - name: 'Announce Cloning Completion'
         run: echo "Repository ${{ github.repository }} has been cloned to VM."
 
-      - name: 'List of repository items and then remove them from VM'
+      - name: 'List of repository items'
         run: |
           ls ${{ github.workspace }}
-          rm –rf ${{ github.workspace }}/*
 
       - name: 'Job Status Report'
         run: echo "This job's status is ${{ job.status }}."
