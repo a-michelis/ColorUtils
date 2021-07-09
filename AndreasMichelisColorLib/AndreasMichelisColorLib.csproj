@@ -19,7 +19,7 @@ Package Icon made by Freepik (https://www.freepik.com) from www.flaticon.com</De
 		<RepositoryType>Github Repository</RepositoryType>
 		<PackageTags>Color,RGB,RGBA,ARGB,HSL,YMCK,CMYK,CYMK</PackageTags>
 		<NeutralLanguage>en</NeutralLanguage>
-		<SignAssembly>true</SignAssembly>
+		<SignAssembly>false</SignAssembly>
 		<AssemblyOriginatorKeyFile>SignatureKey.pfx</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 

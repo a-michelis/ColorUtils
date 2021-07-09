@@ -1,27 +1,43 @@
-name: "My first Github Action"
+name: "Deploy to Nuget.org"
 
-on: [ "push" ]
+on : 
+  push:
+    branches : [ "main" ]
 
-jobs: 
-  my_first_job: 
-    runs-on: 'ubuntu-latest'
+env:
+  PROJECT_RELATIVE_PATH: 'AndreasMichelisColorLib\AndreasMichelisColorLib.csproj'
+  NUGET_OUT_PATH: '${{ github.workspace }}\nuget_publish'
+  API_TOKEN: ${{ secrets.NUKEY }}
+  API_SOURCE : 'https://api.nuget.org/v3/index.json'
+  
+jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: 'windows-latest'
+    if: ${{ contains(github.event.head_commit.message, '#!pub!') }}
     steps:
-      - name: 'Event Discovery'
-        run: echo "triggered by a ${{ github.event_name }} event."
-
-      - name: 'OS Discovery'
-        run: echo "Running inside ${{ runner.os }} system."
-
-      - name: 'Check out repository code'
-        uses: actions/checkout@v2
-
-      - name: 'Announce Cloning Completion'
-        run: echo "Repository ${{ github.repository }} has been cloned to VM."
-
-      - name: 'List of repository items'
-        run: |
-          ls ${{ github.workspace }}
-
-      - name: 'Job Status Report'
-        run: echo "This job's status is ${{ job.status }}."
-# Saved at /.github/workflows/firstaction.yml
+    
+    - name : 'Checkout'
+      uses: actions/checkout@v2
+      
+    - name : 'Install dotnet'
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+      
+    - name: 'Creating Output Directory'
+      run: mkdir ${{ env.NUGET_OUT_PATH }}
+      
+    - name: "Restoring project's references"
+      run: dotnet restore ${{ env.PROJECT_RELATIVE_PATH }}
+      
+    - name: 'Building project'
+      run: dotnet build ${{ env.PROJECT_RELATIVE_PATH }} --no-restore --configuration Release
+      
+    # Put testing steps here
+      
+    - name: 'Packing project'
+      run: dotnet pack ${{ env.NUGET_OUT_PATH }} --no-restore --no-build --configuration Release -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg --output ${{ env.PROJECT_RELATIVE_PATH }}
+      
+    - name: 'Pushing project to nuget.org'
+      run: dotnet nuget push ${{ env.NUGET_OUT_PATH }}\*.nupkg -k ${{ env.API_TOKEN }} -s ${{ env.API_SOURCE }}
